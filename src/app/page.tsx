@@ -60,8 +60,8 @@ export default function Home() {
         {/* Navbar */}
         <header className="absolute top-0 inset-x-0">
           <div className="mx-auto max-w-[1200px] px-6 py-4 grid grid-cols-3 items-center">
-            <div className="flex items-center gap-2">
-              <Image src="/file.svg" alt="Clutch" width={28} height={28} />
+            <div className="flex items-center gap-1">
+              <Image src="/logo.png" alt="Clutch" width={32} height={32} />
               <span className="text-base font-semibold">Clutch</span>
             </div>
             <nav className="hidden md:flex justify-center items-center gap-8 text-sm text-white/80 whitespace-nowrap">
