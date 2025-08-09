@@ -49,7 +49,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="font-sans m-0 p-0">
+    <main className="font-dm-sans m-0 p-0">
       {/* Hero Section */}
       <div
         className="relative h-screen w-screen bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col items-center justify-center"
@@ -75,10 +75,10 @@ export default function Home() {
               <a className="hover:text-white transition-colors" href="#">FAQs</a>
             </nav>
             <div className="flex justify-end items-center gap-3">
-              <button className="hidden md:inline-flex bg-primary hover:opacity-90 text-white rounded-full px-5 py-2 shadow-sm">Download App</button>
+              <button className="hidden md:inline-flex bg-primary hover:opacity-90 text-white rounded-full px-5 py-2 shadow-sm cursor-pointer">Download App</button>
               <button
                 aria-label="Open menu"
-                className="md:hidden inline-flex items-center justify-center size-10 rounded-md bg-white/10 border border-white/15"
+                className="md:hidden inline-flex items-center justify-center size-10 rounded-md bg-white/10 border border-white/15 cursor-pointer"
                 onClick={() => setMenuOpen(true)}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="size-5"><path d="M4 7h16M4 12h16M4 17h16" strokeWidth="1.8" strokeLinecap="round"/></svg>
@@ -125,8 +125,8 @@ export default function Home() {
           </nav>
         </aside>
 
-        <div className="flex flex-col items-center justify-center max-w-[70%] text-center mx-auto gap-y-6">
-          <h2 className="text-5xl font-bold">
+        <div className="flex flex-col items-center justify-center max-w-[70%] text-center mx-auto gap-y-7">
+          <h2 className="text-5xl font-semibold">
             Fuel, gas, diesel & more. Delivered fast, wherever you are.
           </h2>
            <p className="text-md max-w-[70%] text-secondary">
@@ -134,12 +134,18 @@ export default function Home() {
             services—no queues, no delays; just fast, reliable access 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-x-3">
-             <button className="bg-primary rounded-full border-0 text-white px-5 py-2">
+             <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center">
+             <Image src={"/assets/images/apple.png"} className="w-auto h-4" alt="Apple" width={1100} height={1000}></Image>
               Download on iOS
             </button>
-             <button className="bg-primary rounded-full border-0 text-white px-5 py-2 ">
+             <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center ">
+             <Image src={"/assets/images/googleplay.png"} alt="Google Play" width={21} height={21}></Image>
               Download on Android
             </button>
+          </div>
+          <div className=" flex flex-row justify-center gap-x-6 mt-10 items-center">
+            <Image src={"/assets/images/qr.png"} alt="QRCODE" width={100} height={100}></Image>
+            <p className="text-sm text-white">Scan QR to download</p>
           </div>
         </div>
       </div>
