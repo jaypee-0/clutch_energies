@@ -340,9 +340,35 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
+       <section className="py-20 h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
       <TestimonialsSection />
       </section>
+
+       {/* CTA Banner */}
+       <section className="container-page py-10">
+         <div className="cta-banner px-6 md:px-12 py-16 md:py-20 max-w-[1100px] mx-auto">
+           <div className="text-center">
+             <h4 className="text-2xl md:text-[32px] font-semibold leading-tight font-dm-sans">
+               Join thousands of users
+               <br className="hidden md:block" /> who use Clutch everyday
+             </h4>
+             <div className="flex flex-wrap justify-center gap-3 mt-6">
+               <button className="cursor-pointer h-10 px-4 rounded-full text-sm bg-white text-black hover:bg-white/90 inline-flex items-center gap-2">
+                 <Image src="/assets/images/apple_green.png" alt="iOS" width={16} height={16} />
+                 Download on iOS
+               </button>
+               <button className="cursor-pointer h-10 px-4 rounded-full text-sm bg-white/10 border border-white/20 hover:bg-white/15 inline-flex items-center gap-2 text-white">
+                 <Image src="/assets/images/google_green.png" alt="Android" width={18} height={18} />
+                 Download on Android
+               </button>
+             </div>
+             <div className="flex items-center justify-center gap-4 mt-12">
+               <Image src="/assets/images/qr.png" alt="QR" width={100} height={100} />
+               <span className="text-white/80 text-lg">Scan QR to Download</span>
+             </div>
+           </div>
+         </div>
+       </section>
     </main>
   );
 }
