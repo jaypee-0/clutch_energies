@@ -49,7 +49,7 @@ export default function Home() {
     },
   ];
   return (
-    <main className="font-dm-sans m-0 p-0">
+    <main className="font-dm-sans m-0 p-0 bg-black">
       {/* Hero Section */}
       <div
         className="relative h-screen w-screen bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col items-center justify-center"
@@ -252,7 +252,7 @@ export default function Home() {
         </div>
       </div>
       {/* Services Section */}
-      <section className="container-page py-12">
+      <section className=" py-12">
         {/* Tabs */}
         <ServicesTabs services={services} />
       </section>
@@ -274,7 +274,7 @@ function ServicesTabs({ services }: { services: Service[] }) {
   return (
     <div className="mx-auto max-w-[1200px]">
       {/* Category chips */}
-      <div className="flex flex-wrap items-center gap-6 justify-center md:justify-between px-2">
+      <div className="flex flex-wrap items-center gap-6 justify-center md:justify-between px-2 md:max-w-[90%] mx-auto mb-6">
         {services.map((svc, idx) => (
           <button
             key={svc.title}
