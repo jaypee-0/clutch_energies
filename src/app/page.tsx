@@ -256,6 +256,60 @@ export default function Home() {
         {/* Tabs */}
         <ServicesTabs services={services} />
       </section>
+      
+      {/* All-in-one App Section */}
+      <section className="container-page py-16 mx-auto max-w-[1200px]">
+        <div className="grid md:grid-cols-2 items-center gap-10">
+          <div className="card h-[360px] md:h-[420px] flex items-center justify-center">
+            <Image src="/assets/images/sec1.png" alt="App preview" width={420} height={360} className="object-cover w-full h-full rounded-xl" />
+          </div>
+          <div className="relative space-y-4">
+            <div className="text-yellow-400 text-sm">All in one app</div>
+            <h2 className="text-2xl md:text-3xl font-semibold">Ready when you need it</h2>
+            <p className="text-sm text-white/70 max-w-prose">From emergency roadside help to daily refueling, Clutch is built for convenience, speed, and peace of mind. Whether it’s your car or your kitchen, we’ll keep you powered up.</p>
+             <div className="flex flex-row gap-x-3">
+            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer">
+              <Image
+                src={"/assets/images/apple.png"}
+                className="w-auto h-4"
+                alt="Apple"
+                width={1100}
+                height={1000}
+              ></Image>
+              Download on iOS
+            </button>
+            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer ">
+              <Image
+                src={"/assets/images/googleplay.png"}
+                alt="Google Play"
+                width={21}
+                height={21}
+              ></Image>
+              Download on Android
+            </button>
+          </div>
+            <div className="pointer-events-none absolute -z-10 right-0 top-0 h-40 w-60 rounded-full blur-2xl bg-[radial-gradient(200px_120px_at_80%_20%,rgba(34,197,94,.25),transparent)]" />
+          </div>
+        </div>
+      </section>
+
+      {/* For Business Section */}
+      <section className="container-page py-16 mx-auto max-w-[1200px]">
+        <div className="grid md:grid-cols-2 items-center gap-10">
+          <div className="space-y-4">
+            <div className="text-yellow-400 text-sm">For business</div>
+            <h2 className="text-2xl md:text-3xl font-semibold">Reduce downtime and fuel delays with Clutch for business</h2>
+            <p className="text-sm text-white/70 max-w-prose">Ready to simplify your fueling process? Contact us today to create a custom fleet service plan that fits your operations.</p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <button className="cursor-pointer h-9 px-4 rounded-full text-xs bg-white text-black hover:bg-white/90 ">Fleet services</button>
+              <button className="cursor-pointer h-9 px-4 rounded-full text-xs bg-white/10 border border-white/15 hover:bg-white/15">Become a partner</button>
+            </div>
+          </div>
+          <div className="card h-[320px] md:h-[400px] flex items-center justify-center rounded-xl">
+            <Image src="/assets/images/sec2.png" alt="Fleet vehicles" width={520} height={360} className="object-cover w-full h-full rounded-xl" />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
