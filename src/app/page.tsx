@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -256,38 +257,50 @@ export default function Home() {
         {/* Tabs */}
         <ServicesTabs services={services} />
       </section>
-      
+
       {/* All-in-one App Section */}
       <section className="container-page py-16 mx-auto max-w-[1200px]">
         <div className="grid md:grid-cols-2 items-center gap-y-10 gap-x-16">
           <div className="card h-[360px] md:h-[420px] flex items-center justify-center">
-            <Image src="/assets/images/sec1.png" alt="App preview" width={420} height={360} className="object-cover w-full h-full rounded-xl" />
+            <Image
+              src="/assets/images/sec1.png"
+              alt="App preview"
+              width={420}
+              height={360}
+              className="object-cover w-full h-full rounded-xl"
+            />
           </div>
           <div className="relative space-y-4">
             <div className="text-yellow-400 text-sm">All in one app</div>
-            <h2 className="text-2xl md:text-3xl font-semibold max-w-[70%]">Ready when you need it</h2>
-            <p className="text-sm text-white/70 max-w-[70%]">From emergency roadside help to daily refueling, Clutch is built for convenience, speed, and peace of mind. Whether it’s your car or your kitchen, we’ll keep you powered up.</p>
-             <div className="flex flex-row gap-x-3">
-            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer">
-              <Image
-                src={"/assets/images/apple.png"}
-                className="w-auto h-4"
-                alt="Apple"
-                width={1100}
-                height={1000}
-              ></Image>
-              Download on iOS
-            </button>
-            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer ">
-              <Image
-                src={"/assets/images/googleplay.png"}
-                alt="Google Play"
-                width={21}
-                height={21}
-              ></Image>
-              Download on Android
-            </button>
-          </div>
+            <h2 className="text-2xl md:text-3xl font-semibold max-w-[70%]">
+              Ready when you need it
+            </h2>
+            <p className="text-sm text-white/70 max-w-[70%]">
+              From emergency roadside help to daily refueling, Clutch is built
+              for convenience, speed, and peace of mind. Whether it’s your car
+              or your kitchen, we’ll keep you powered up.
+            </p>
+            <div className="flex flex-row gap-x-3">
+              <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer">
+                <Image
+                  src={"/assets/images/apple.png"}
+                  className="w-auto h-4"
+                  alt="Apple"
+                  width={1100}
+                  height={1000}
+                ></Image>
+                Download on iOS
+              </button>
+              <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer ">
+                <Image
+                  src={"/assets/images/googleplay.png"}
+                  alt="Google Play"
+                  width={21}
+                  height={21}
+                ></Image>
+                Download on Android
+              </button>
+            </div>
             <div className="pointer-events-none absolute -z-10 right-0 top-0 h-40 w-60 rounded-full blur-2xl bg-[radial-gradient(200px_120px_at_80%_20%,rgba(34,197,94,.25),transparent)]" />
           </div>
         </div>
@@ -298,17 +311,37 @@ export default function Home() {
         <div className="grid md:grid-cols-2 items-center gap-y-10 gap-x-16">
           <div className="space-y-4">
             <div className="text-yellow-400 text-sm">For business</div>
-            <h2 className="text-2xl md:text-3xl font-semibold max-w-[70%]">Reduce downtime and fuel delays with Clutch for business</h2>
-            <p className="text-sm text-white/70 max-w-[70%]">Ready to simplify your fueling process? Contact us today to create a custom fleet service plan that fits your operations.</p>
+            <h2 className="text-2xl md:text-3xl font-semibold max-w-[70%]">
+              Reduce downtime and fuel delays with Clutch for business
+            </h2>
+            <p className="text-sm text-white/70 max-w-[70%]">
+              Ready to simplify your fueling process? Contact us today to create
+              a custom fleet service plan that fits your operations.
+            </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <button className="cursor-pointer h-9 px-4 rounded-full text-xs bg-white text-black hover:bg-white/90 ">Fleet services</button>
-              <button className="cursor-pointer h-9 px-4 rounded-full text-xs bg-white/10 border border-white/15 hover:bg-white/15">Become a partner</button>
+              <button className="cursor-pointer h-9 px-4 rounded-full text-xs bg-white text-black hover:bg-white/90 ">
+                Fleet services
+              </button>
+              <button className="cursor-pointer h-9 px-4 rounded-full text-xs bg-white/10 border border-white/15 hover:bg-white/15">
+                Become a partner
+              </button>
             </div>
           </div>
           <div className="card h-[320px] md:h-[400px] flex items-center justify-center rounded-xl">
-            <Image src="/assets/images/sec2.png" alt="Fleet vehicles" width={520} height={360} className="object-cover w-full h-full rounded-xl" />
+            <Image
+              src="/assets/images/sec2.png"
+              alt="Fleet vehicles"
+              width={520}
+              height={360}
+              className="object-cover w-full h-full rounded-xl"
+            />
           </div>
         </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
+      <TestimonialsSection />
       </section>
     </main>
   );
@@ -339,7 +372,13 @@ function ServicesTabs({ services }: { services: Service[] }) {
                 : "border-none bg-white/0 hover:bg-white/5"
             }`}
           >
-            <Image src={svc.image} className="w-auto h-20 object-contain" alt={svc.title} width={500} height={500} />
+            <Image
+              src={svc.image}
+              className="w-auto h-20 object-contain"
+              alt={svc.title}
+              width={500}
+              height={500}
+            />
             <span className="text-xs text-white/80">{svc.title}</span>
           </button>
         ))}
@@ -356,7 +395,9 @@ function ServicesTabs({ services }: { services: Service[] }) {
             <p className="text-sm text-white/70 mt-4 max-w-prose">
               {active.description}
             </p>
-            <button className="mt-6 text-xs text-white/80 underline underline-offset-4">Learn more →</button>
+            <button className="mt-6 text-xs text-white/80 underline underline-offset-4">
+              Learn more →
+            </button>
           </div>
           <div className="flex md:justify-end">
             <Image
@@ -370,5 +411,173 @@ function ServicesTabs({ services }: { services: Service[] }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function TestimonialsSection() {
+  const testimonials: { quote: string; name: string; location: string }[] = [
+    {
+      quote:
+        "I was stranded late at night with no fuel. Clutch showed up in 15 minutes — absolute lifesavers!",
+      name: "Femi A.",
+      location: "Lagos, Nigeria",
+    },
+    {
+      quote:
+        "One app for fuel, towing, and diagnostics? Genius. It’s like roadside assistance made smarter. The best part is I don’t have to keep multiple contacts anymore — everything is in the app.",
+      name: "Daniel E.",
+      location: "Port Harcourt",
+    },
+    {
+      quote:
+        "Their cooking gas delivery is so convenient. No more carrying heavy cylinders or waiting for the gas man.",
+      name: "Zainab M.",
+      location: "Abuja, Nigeria",
+    },
+    {
+      quote:
+        "As a fleet manager, I can’t imagine going back to managing fuel logistics manually. Clutch just works — invoices are clear, deliveries are on time, and my team saves hours every week.",
+      name: "Samuel I",
+      location: "Abuja, Nigeria",
+    },
+    {
+      quote:
+        "Our business relies on diesel to run generators. Clutch is fast, dependable, and always on time. Pricing is transparent and service is consistent even during peak hours.",
+      name: "Tolu I.",
+      location: "Lagos, Nigeria",
+    },
+    {
+      quote:
+        "Used to rely on two or three different apps, now I just use Clutch. It’s fast, simple, and made for people like me who want things to just work.",
+      name: "Tricia B.",
+      location: "Enugu, Nigeria",
+    },
+    {
+      quote:
+        "From booking to delivery, the experience is smooth. Notifications, real-time tracking, and friendly support — honestly a breath of fresh air.",
+      name: "Nonso K.",
+      location: "Abuja, Nigeria",
+    },
+    {
+      quote:
+        "Had an early morning emergency before work. Clutch got to me quickly, fueled me up, and I still made it in time for my meeting.",
+      name: "Bose O.",
+      location: "Ibadan, Nigeria",
+    },
+    {
+      quote:
+        "I recommend Clutch to anyone running a small business with vehicles. Scheduling deliveries for off-hours has been a game changer for us.",
+      name: "Ahmed S.",
+      location: "Kano, Nigeria",
+    },
+  ];
+
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const column1 = testimonials.slice(0, 3);
+  const column2 = testimonials.slice(3, 6);
+  const column3 = testimonials.slice(6, 8);
+
+  const handleMouseEnter = (): void => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = (): void => {
+    setIsHovered(false);
+  };
+
+  return (
+    <section className="py-20 overflow-hidden max-w-[80%] mx-auto max-h-[95%]">
+      <div className="mx-auto max-w-[1100px] px-6 text-center space-y-3 mb-7">
+        <div className="text-yellow-400 text-sm">Testimonials</div>
+        <h3 className="text-3xl md:text-4xl font-semibold leading-tight">
+          Don’t take our word for it — hear theirs
+        </h3>
+      </div>
+      <div
+        className="lg:flex gap-3 h-full hidden"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="flex-1 overflow-hidden">
+          <motion.div
+            animate={isHovered ? {} : { y: [-500, 500] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+              repeatType: "loop",
+            }}
+            className="flex flex-col gap-3"
+          >
+            {[...column1, ...column1, ...column1].map((t, idx) => (
+              <div
+                key={idx}
+                className="glass rounded-xl p-5 text-white/85 text-sm min-h-[150px]"
+              >
+                <p className="leading-relaxed">{t.quote}</p>
+                <div className="mt-4 text-white/70 text-xs">
+                  <div className="font-medium">{t.name}</div>
+                  <div>{t.location}</div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="flex-1 overflow-hidden">
+          <motion.div
+            animate={isHovered ? {} : { y: [100, -500] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+              repeatType: "loop",
+            }}
+            className="flex flex-col gap-3"
+          >
+            {[...column2, ...column2, ...column2].map((t, idx) => (
+              <div
+                key={idx}
+                className="glass rounded-xl p-5 text-white/85 text-sm min-h-[150px]"
+              >
+                <p className="leading-relaxed">{t.quote}</p>
+                <div className="mt-4 text-white/70 text-xs">
+                  <div className="font-medium">{t.name}</div>
+                  <div>{t.location}</div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="flex-1 overflow-hidden">
+          <motion.div
+            animate={isHovered ? {} : { y: [-500, 200] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+              repeatType: "loop",
+              delay: 2,
+            }}
+            className="flex flex-col gap-3"
+          >
+            {[...column3, ...column3, ...column3, ...column3].map((t, idx) => (
+              <div
+                key={idx}
+                className="glass rounded-xl p-5 text-white/85 text-sm min-h-[150px]"
+              >
+                <p className="leading-relaxed">{t.quote}</p>
+                <div className="mt-4 text-white/70 text-xs">
+                  <div className="font-medium">{t.name}</div>
+                  <div>{t.location}</div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }

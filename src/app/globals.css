@@ -59,3 +59,28 @@ body {
 .cta-gradient {
   background: linear-gradient(135deg, #2cc36b 0%, #64d36e 40%, #3bbf7e 100%);
 }
+
+/* Testimonials vertical marquee */
+@keyframes scroll-vert {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.vertical-marquee {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+.vertical-marquee > .marquee-content {
+  animation: scroll-vert 28s linear infinite;
+  will-change: transform;
+}
+.vertical-marquee:hover > .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Remove inter-card gaps for flex wrap while preserving rounded look */
+.vertical-marquee .glass {
+  margin: 0; /* ensure no external gap */
+  border-radius: 12px;
+}
