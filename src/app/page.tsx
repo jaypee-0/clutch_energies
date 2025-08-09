@@ -357,8 +357,8 @@ export default function Home() {
                  <Image src="/assets/images/apple_green.png" alt="iOS" width={16} height={16} />
                  Download on iOS
                </button>
-               <button className="cursor-pointer h-10 px-4 rounded-full text-sm bg-white/10 border border-white/20 hover:bg-white/15 inline-flex items-center gap-2 text-white">
-                 <Image src="/assets/images/google_green.png" alt="Android" width={18} height={18} />
+               <button className="cursor-pointer h-10 px-4 rounded-full text-sm bg-white text-black hover:bg-white/90 inline-flex items-center gap-2">
+                 <Image src="/assets/images/android_green.png" alt="Android" width={18} height={18} />
                  Download on Android
                </button>
              </div>
