@@ -189,15 +189,15 @@ export default function Home() {
               onClick={() => setMenuOpen(false)}
             >
               About Us
-            </a>
-            <a
+        </a>
+        <a
               className="hover:text-white transition-colors"
               href="#"
               onClick={() => setMenuOpen(false)}
             >
               Contact Us
-            </a>
-            <a
+        </a>
+        <a
               className="hover:text-white transition-colors"
               href="#"
               onClick={() => setMenuOpen(false)}
@@ -369,6 +369,9 @@ export default function Home() {
            </div>
          </div>
        </section>
+
+       {/* Footer */}
+       <Footer />
     </main>
   );
 }
@@ -397,8 +400,8 @@ function ServicesTabs({ services }: { services: Service[] }) {
                 ? "border-none bg-white/5"
                 : "border-none bg-white/0 hover:bg-white/5"
             }`}
-          >
-            <Image
+        >
+          <Image
               src={svc.image}
               className="w-auto h-20 object-contain"
               alt={svc.title}
@@ -437,6 +440,110 @@ function ServicesTabs({ services }: { services: Service[] }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function Footer() {
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
+  return (
+    <footer className="mt-8">
+      <div className="footer-divider" />
+      <div className="container-page max-w-[1100px] mx-auto py-10">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="col-span-2 flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <Image src="/logo.png" alt="Clutch" width={28} height={28} />
+              <span className="text-base font-semibold">Clutch</span>
+            </div>
+            <p className="text-white/70 text-sm max-w-[46ch]">
+              On-demand delivery of cooking gas, fuel and emergency vehicle services—no queues, no delays; just fast, reliable access 24/7.
+            </p>
+            <div className="flex gap-3 pt-1"><div className="flex flex-col sm:flex-row gap-x-3">
+            <button className="bg-primary rounded-full border-0 text-white text-sm px-5 py-2 flex flex-row gap-x-2 items-center">
+              <Image
+                src={"/assets/images/apple.png"}
+                className="w-auto h-4"
+                alt="Apple"
+                width={1100}
+                height={1000}
+              ></Image>
+              Download on iOS
+            </button>
+            <button className="bg-primary rounded-full border-0 text-white text-sm px-5 py-2 flex flex-row gap-x-2 items-center ">
+              <Image
+                src={"/assets/images/googleplay.png"}
+                alt="Google Play"
+                width={21}
+                height={21}
+              ></Image>
+              Download on Android
+            </button>
+          </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="mt-4">
+              <div className="text-white/70 text-sm mb-2">Subscribe to updates</div>
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  className="flex-1 h-10 rounded-md bg-white/5 border border-white/10 px-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+                  aria-label="Email address"
+                />
+                <button type="submit" className="h-10 px-4 rounded-md bg-primary text-white text-sm">Subscribe</button>
+              </form>
+              {/* Socials */}
+              <div className="flex items-center gap-3 mt-4">
+                <a aria-label="Twitter" href="#" className="size-9 grid place-items-center rounded-md bg-white/5 border border-white/10 hover:bg-white/10">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 text-white/80"><path d="M22 5.8c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.9-2.6 1.1-.7-.8-1.7-1.3-2.8-1.3-2.1 0-3.8 1.7-3.8 3.8 0 .3 0 .6.1.9-3.2-.2-6.1-1.7-8-4.1-.3.6-.5 1.2-.5 1.9 0 1.3.7 2.5 1.7 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.9-.3.1-.6.1-1 .1-.2 0-.5 0-.7-.1.5 1.6 2 2.8 3.7 2.8-1.4 1.1-3.1 1.8-5 1.8h-1c1.8 1.1 3.9 1.8 6.2 1.8 7.4 0 11.4-6.1 11.4-11.4v-.5c.8-.6 1.4-1.2 1.9-2z"/></svg>
+                </a>
+                <a aria-label="Instagram" href="#" className="size-9 grid place-items-center rounded-md bg-white/5 border border-white/10 hover:bg-white/10">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 text-white/80"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm6.5-1.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/></svg>
+                </a>
+                <a aria-label="LinkedIn" href="#" className="size-9 grid place-items-center rounded-md bg-white/5 border border-white/10 hover:bg-white/10">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 text-white/80"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.06c.63-1.2 2.17-2.46 4.46-2.46 4.77 0 5.65 3.14 5.65 7.22V24h-5v-7.1c0-1.7 0-3.88-2.37-3.88-2.37 0-2.73 1.86-2.73 3.76V24h-5V8z"/></svg>
+                </a>
+                <a aria-label="Facebook" href="#" className="size-9 grid place-items-center rounded-md bg-white/5 border border-white/10 hover:bg-white/10">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 text-white/80"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.4v-2.9h2.4V9.4c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4v1.7h2.6l-.4 2.9h-2.2v7A10 10 0 0022 12z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-col gap-3">
+            <div className="text-white/60 text-sm">Company</div>
+            <a className="text-sm text-white/80 hover:text-white" href="#">About Us</a>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Contact</a>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Careers</a>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Blog</a>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <div className="text-white/60 text-sm">Services</div>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Petrol delivery</a>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Gas delivery</a>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Diesel delivery</a>
+            <a className="text-sm text-white/80 hover:text-white" href="#">Roadside & towing</a>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
+          <div>© {new Date().getFullYear()} Clutch Energies. All rights reserved.</div>
+          <div className="flex items-center gap-4">
+            <a className="hover:text-white" href="#">Privacy</a>
+            <a className="hover:text-white" href="#">Terms</a>
+            <a className="hover:text-white" href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 

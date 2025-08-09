@@ -95,3 +95,10 @@ body {
   margin: 0; /* ensure no external gap */
   border-radius: 12px;
 }
+
+/* Footer subtle divider */
+.footer-divider {
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08), transparent);
+  height: 1px;
+  width: 100%;
+}
