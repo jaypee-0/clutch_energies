@@ -10,6 +10,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Tailwind v4 tokens replacing old theme.extend */
+  --color-primary: #3da451;
+  --color-secondary: #828288;
+  --color-danger: #e71e1b;
+
+  /* Optional: add custom font sizes (enables `text-md`) */
+  --text-md: 1.1rem;
+  --text-3xl: 2.2rem;
+
+  /* Custom breakpoints (enables `xs:` and `tab:`) */
+  --breakpoint-xs: 280px;
+  --breakpoint-sm: 380px;
+  --breakpoint-md: 420px;
+  --breakpoint-lg: 680px;
+  --breakpoint-tab: 1024px;
 }
 
 body {

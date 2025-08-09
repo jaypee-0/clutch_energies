@@ -1,20 +1,80 @@
-// tailwind.config.js
+// const { colors } = require('./src/theme/colors');
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    theme: {
-      
-      extend: {
-        colors: {
-          'primary': '#3DA451',
-          'secondary': '#FFFFFF',
-        },
-        backgroundColor: {
-          'primary': '#3DA451',
-          'secondary': '#FFFFFF',
-        },
-        backgroundImage: {
-          'hero-bg': "url('/assets/bg.png')",
-        }
+  content: ["./{src,app,components,libs,pages,hooks}/**/*.{html,js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#3DA451",
+        secondary: "#828288",
+        danger: "#E71E1B",
+      },
+      screens: {
+        xs: "280px",
+        sm: "380px",
+        md: "420px",
+        lg: "680px",
+        tab: "1024px",
+      },
+      padding: {
+        xs: "5px",
+        sm: "8px",
+        md: "16px",
+        lg: "24px",
+        xl: "48px",
+      },
+      fontSize: {
+        xs: "12px",
+        sm: "14px",
+        base: "0.95rem",
+        md: "1.1rem",
+        lg: "1.125rem",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "2.2rem",
+      },
+      textColor: {
+        primary: "#3DA451",
+        yellow: "#ffc82c",
+        black: "#000000",
+        white: "#ffffff",
+        place: "#131126",
+        danger: "#E71E1B",
+      },
+      backgroundColor: (theme) => ({
+        ...theme("colors"),
+        default: theme("colors.gray-light", "currentColor"),
+        primary: "#3DA451",
+        white: "#ffffff",
+        black: "#000000",
+        graylight: "#F8F8FB",
+        graylighter: "#CCCCCC80",
+        graymid: "#CCCCCC",
+        grey200: "#7B828E",
+        danger: "#E71E1B80",
+      }),
+      borderColor: (theme) => ({
+        ...theme("colors"),
+        default: theme("colors.gray-light", "currentColor"),
+        primary: "#3DA451",
+        white: "#ffffff",
+        black: "#000000",
+        graylight: "#F8F8FB",
+        graylighter: "#CCCCCC80",
+        graymid: "#CCCCCC",
+        grey200: "#7B828E",
+        danger: "#E71E1B80",
+      }),
+      borderRadius: {
+        none: "0",
+        sm: "0.375rem",
+        base: "9px",
+        md: "0.5rem",
+        lg: "1rem",
+        xl: "1.5rem",
+        full: "9999px",
       },
     },
-    plugins: [],
-  }
+  },
+  plugins: [],
+};

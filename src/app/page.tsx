@@ -58,15 +58,15 @@ export default function Home() {
           <h2 className="text-5xl font-bold">
             Fuel, gas, diesel & more. Delivered fast, wherever you are.
           </h2>
-          <p className="text-md max-w-[70%] text-gray-400">
+           <p className="text-md max-w-[70%] text-secondary">
             On-demand delivery of cooking gas, fuel and emergency vehicle
             services—no queues, no delays; just fast, reliable access 24/7.
           </p>
-          <div className="gap-x-3">
-            <button className="bg-primary rounded-full border-0 text-white px-5 py-2">
+          <div className="flex flex-col sm:flex-row gap-x-3">
+             <button className="bg-primary rounded-full border-0 text-white px-5 py-2">
               Download on iOS
             </button>
-            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 ">
+             <button className="bg-primary rounded-full border-0 text-white px-5 py-2 ">
               Download on Android
             </button>
           </div>
