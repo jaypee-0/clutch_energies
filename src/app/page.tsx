@@ -60,12 +60,12 @@ export default function Home() {
       >
         {/* Navbar */}
         <header className="absolute top-0 inset-x-0">
-          <div className="mx-auto max-w-[1200px] px-6 py-4 grid grid-cols-3 items-center">
+          <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-4 grid grid-cols-2 md:grid-cols-3 items-center">
             <div className="flex items-center gap-1">
               <Image src="/logo.png" alt="Clutch" width={32} height={32} />
               <span className="text-base font-semibold">Clutch</span>
             </div>
-            <nav className="hidden md:flex justify-center items-center gap-8 text-sm text-white/80 whitespace-nowrap">
+            <nav className="hidden md:flex justify-center items-center gap-6 lg:gap-8 text-sm text-white/80 whitespace-nowrap">
               <a
                 className="hover:text-white transition-colors flex items-center gap-1"
                 href="#"
@@ -99,7 +99,7 @@ export default function Home() {
                 FAQs
               </a>
             </nav>
-            <div className="flex justify-end items-center gap-3">
+            <div className="flex justify-end items-center gap-2 sm:gap-3">
               <button className="hidden md:inline-flex bg-primary hover:opacity-90 text-white rounded-full px-5 py-2 shadow-sm cursor-pointer">
                 Download App
               </button>
@@ -212,15 +212,15 @@ export default function Home() {
           </nav>
         </aside>
 
-        <div className="flex flex-col items-center justify-center max-w-[70%] text-center mx-auto gap-y-7">
-          <h2 className="text-5xl font-semibold">
+        <div className="flex flex-col items-center justify-center w-full px-6 text-center mx-auto gap-y-5 sm:gap-y-7 max-w-[90%] sm:max-w-[70%]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
             Fuel, gas, diesel & more. Delivered fast, wherever you are.
           </h2>
-          <p className="text-md max-w-[70%] text-secondary">
+          <p className="text-sm sm:text-md max-w-[90%] sm:max-w-[70%] text-secondary">
             On-demand delivery of cooking gas, fuel and emergency vehicle
             services—no queues, no delays; just fast, reliable access 24/7.
           </p>
-          <div className="flex flex-col sm:flex-row gap-x-3">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-x-3">
             <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center">
               <Image
                 src={"/assets/images/apple.png"}
@@ -241,27 +241,27 @@ export default function Home() {
               Download on Android
             </button>
           </div>
-          <div className=" flex flex-row justify-center gap-x-6 mt-10 items-center">
+          <div className=" flex flex-row justify-center gap-x-4 sm:gap-x-6 mt-8 sm:mt-10 items-center">
             <Image
               src={"/assets/images/qr.png"}
               alt="QRCODE"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             ></Image>
-            <p className="text-sm text-white">Scan QR to download</p>
+            <p className="text-xs sm:text-sm text-white">Scan QR to download</p>
           </div>
         </div>
       </div>
       {/* Services Section */}
-      <section className=" py-12">
+      <section className=" py-10 sm:py-12">
         {/* Tabs */}
         <ServicesTabs services={services} />
       </section>
 
       {/* All-in-one App Section */}
-      <section className="container-page py-16 mx-auto max-w-[1200px]">
-        <div className="grid md:grid-cols-2 items-center gap-y-10 gap-x-16">
-          <div className="card h-[360px] md:h-[420px] flex items-center justify-center">
+      <section className="container-page py-14 sm:py-16 mx-auto max-w-[1200px]">
+        <div className="stack-sm items-center">
+          <div className="card h-[280px] sm:h-[360px] md:h-[420px] flex items-center justify-center order-2 md:order-1">
             <Image
               src="/assets/images/sec1.png"
               alt="App preview"
@@ -270,12 +270,12 @@ export default function Home() {
               className="object-cover w-full h-full rounded-xl"
             />
           </div>
-          <div className="relative space-y-4">
+          <div className="relative space-y-4 order-1 md:order-2 px-2 sm:px-0">
             <div className="text-yellow-400 text-sm">All in one app</div>
-            <h2 className="text-2xl md:text-3xl font-semibold max-w-[70%]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold max-w-[90%] sm:max-w-[70%]">
               Ready when you need it
             </h2>
-            <p className="text-sm text-white/70 max-w-[70%]">
+            <p className="text-sm text-white/70 max-w-[90%] sm:max-w-[70%]">
               From emergency roadside help to daily refueling, Clutch is built
               for convenience, speed, and peace of mind. Whether it’s your car
               or your kitchen, we’ll keep you powered up.
@@ -307,14 +307,14 @@ export default function Home() {
       </section>
 
       {/* For Business Section */}
-      <section className="container-page py-16 mx-auto max-w-[1200px]">
-        <div className="grid md:grid-cols-2 items-center gap-y-10 gap-x-16">
+      <section className="container-page py-14 sm:py-16 mx-auto max-w-[1200px]">
+        <div className="stack-sm items-center">
           <div className="space-y-4">
             <div className="text-yellow-400 text-sm">For business</div>
-            <h2 className="text-2xl md:text-3xl font-semibold max-w-[70%]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold max-w-[90%] sm:max-w-[70%]">
               Reduce downtime and fuel delays with Clutch for business
             </h2>
-            <p className="text-sm text-white/70 max-w-[70%]">
+            <p className="text-sm text-white/70 max-w-[90%] sm:max-w-[70%]">
               Ready to simplify your fueling process? Contact us today to create
               a custom fleet service plan that fits your operations.
             </p>
@@ -327,7 +327,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="card h-[320px] md:h-[400px] flex items-center justify-center rounded-xl">
+          <div className="card h-[260px] sm:h-[320px] md:h-[400px] flex items-center justify-center rounded-xl">
             <Image
               src="/assets/images/sec2.png"
               alt="Fleet vehicles"
@@ -340,12 +340,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-       <section className="py-20 h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
+      <section className="py-16 sm:py-20 h-[90vh] sm:h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
       <TestimonialsSection />
       </section>
 
        {/* CTA Banner */}
-       <section className="container-page py-10">
+      <section className="container-page py-10">
          <div className="cta-banner px-6 md:px-12 py-16 md:py-20 max-w-[1100px] mx-auto">
            <div className="text-center">
              <h4 className="text-2xl md:text-[32px] font-semibold leading-tight font-dm-sans">
@@ -362,9 +362,9 @@ export default function Home() {
                  Download on Android
                </button>
              </div>
-             <div className="flex items-center justify-center gap-4 mt-12">
-               <Image src="/assets/images/qr.png" alt="QR" width={100} height={100} />
-               <span className="text-white/80 text-lg">Scan QR to Download</span>
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-12">
+              <Image src="/assets/images/qr.png" alt="QR" width={84} height={84} />
+              <span className="text-white/80 text-sm sm:text-lg">Scan QR to Download</span>
              </div>
            </div>
          </div>

@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${dmSans.variable} ${geistMono.variable} text-white bg-black`}
+        className={`${geistSans.variable} ${dmSans.variable} ${geistMono.variable} text-white bg-black overflow-x-hidden`}
       >
         {children}
       </body>

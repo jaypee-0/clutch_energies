@@ -56,6 +56,19 @@ body {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
+/* Responsive helpers */
+.stack-sm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .stack-sm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
 .cta-gradient {
   background: linear-gradient(135deg, #2cc36b 0%, #64d36e 40%, #3bbf7e 100%);
 }
