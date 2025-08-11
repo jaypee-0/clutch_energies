@@ -146,7 +146,7 @@ export default function Home() {
         >
           <div className="p-4 flex items-center justify-between border-b border-white/10">
             <div className="flex items-center gap-2">
-              <Image src="/file.svg" alt="Clutch" width={24} height={24} />
+              <Image src="/logo.png" alt="Clutch" width={24} height={24} />
               <span className="text-sm font-semibold">Clutch</span>
             </div>
             <button
@@ -212,16 +212,16 @@ export default function Home() {
           </nav>
         </aside>
 
-        <div className="flex flex-col items-center justify-center w-full px-6 text-center mx-auto gap-y-5 sm:gap-y-7 max-w-[90%] sm:max-w-[70%]">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+        <div className="flex flex-col items-center justify-center w-full px-6 text-center mx-auto gap-y-5 sm:gap-y-7 max-w-[95%] md:max-w-[70%]">
+          <h2 className="text-3xl md:text-5xl font-semibold">
             Fuel, gas, diesel & more. Delivered fast, wherever you are.
           </h2>
-          <p className="text-sm sm:text-md max-w-[90%] sm:max-w-[70%] text-secondary">
+          <p className="text-sm md:text-md max-w-full md:max-w-[70%] text-secondary">
             On-demand delivery of cooking gas, fuel and emergency vehicle
             services—no queues, no delays; just fast, reliable access 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-x-3">
-            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center">
+            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center text-xs md:text-sm">
               <Image
                 src={"/assets/images/apple.png"}
                 className="w-auto h-4"
@@ -231,7 +231,7 @@ export default function Home() {
               ></Image>
               Download on iOS
             </button>
-            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center ">
+            <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center text-xs md:text-sm">
               <Image
                 src={"/assets/images/googleplay.png"}
                 alt="Google Play"
@@ -259,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* All-in-one App Section */}
-      <section className="container-page py-14 sm:py-16 mx-auto max-w-[1200px]">
+      <section className="px-4 md:px-0 container-page py-14 sm:py-16 mx-auto max-w-[1200px]">
         <div className="stack-sm items-center">
           <div className="card h-[280px] sm:h-[360px] md:h-[420px] flex items-center justify-center order-2 md:order-1">
             <Image
@@ -272,16 +272,16 @@ export default function Home() {
           </div>
           <div className="relative space-y-4 order-1 md:order-2 px-2 sm:px-0">
             <div className="text-yellow-400 text-sm">All in one app</div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold max-w-[90%] sm:max-w-[70%]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold max-w-full md:max-w-[70%]">
               Ready when you need it
             </h2>
-            <p className="text-sm text-white/70 max-w-[90%] sm:max-w-[70%]">
+            <p className="text-sm text-white/70 max-w-full md:max-w-[70%]">
               From emergency roadside help to daily refueling, Clutch is built
               for convenience, speed, and peace of mind. Whether it’s your car
               or your kitchen, we’ll keep you powered up.
             </p>
             <div className="flex flex-row gap-x-3">
-              <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer">
+              <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer text-xs sm:text-sm">
                 <Image
                   src={"/assets/images/apple.png"}
                   className="w-auto h-4"
@@ -291,7 +291,7 @@ export default function Home() {
                 ></Image>
                 Download on iOS
               </button>
-              <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer ">
+              <button className="bg-primary rounded-full border-0 text-white px-5 py-2 flex flex-row gap-x-2 items-center cursor-pointer text-xs sm:text-sm">
                 <Image
                   src={"/assets/images/googleplay.png"}
                   alt="Google Play"
@@ -307,14 +307,14 @@ export default function Home() {
       </section>
 
       {/* For Business Section */}
-      <section className="container-page py-14 sm:py-16 mx-auto max-w-[1200px]">
+      <section className="px-4 md:px-0 container-page py-14 sm:py-16 mx-auto max-w-[1200px]">
         <div className="stack-sm items-center">
           <div className="space-y-4">
             <div className="text-yellow-400 text-sm">For business</div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold max-w-[90%] sm:max-w-[70%]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold max-w-full md:max-w-[70%]">
               Reduce downtime and fuel delays with Clutch for business
             </h2>
-            <p className="text-sm text-white/70 max-w-[90%] sm:max-w-[70%]">
+            <p className="text-sm text-white/70 max-w-full md:max-w-[70%]">
               Ready to simplify your fueling process? Contact us today to create
               a custom fleet service plan that fits your operations.
             </p>
@@ -340,12 +340,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-20 h-[90vh] sm:h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
+      <section className="hidden md:block py-16 sm:py-20 h-[90vh] sm:h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
       <TestimonialsSection />
       </section>
 
        {/* CTA Banner */}
-      <section className="container-page py-10">
+      <section className="px-4 md:px-0 container-page py-10">
          <div className="cta-banner px-6 md:px-12 py-16 md:py-20 max-w-[1100px] mx-auto">
            <div className="text-center">
              <h4 className="text-2xl md:text-[32px] font-semibold leading-tight font-dm-sans">
@@ -449,7 +449,7 @@ function Footer() {
   };
 
   return (
-    <footer className="mt-8">
+    <footer className="mt-8 px-4 md:px-0">
       <div className="footer-divider" />
       <div className="container-page max-w-[1100px] mx-auto py-10">
         <div className="grid md:grid-cols-4 gap-8">
@@ -463,7 +463,7 @@ function Footer() {
               On-demand delivery of cooking gas, fuel and emergency vehicle services—no queues, no delays; just fast, reliable access 24/7.
             </p>
             <div className="flex gap-3 pt-1"><div className="flex flex-col sm:flex-row gap-x-3">
-            <button className="bg-primary rounded-full border-0 text-white text-sm px-5 py-2 flex flex-row gap-x-2 items-center">
+            <button className="bg-primary rounded-full border-0 text-white text-xs sm:text-sm px-5 py-2 flex flex-row gap-x-2 items-center">
               <Image
                 src={"/assets/images/apple.png"}
                 className="w-auto h-4"
@@ -473,7 +473,7 @@ function Footer() {
               ></Image>
               Download on iOS
             </button>
-            <button className="bg-primary rounded-full border-0 text-white text-sm px-5 py-2 flex flex-row gap-x-2 items-center ">
+            <button className="bg-primary rounded-full border-0 text-white text-xs sm:text-sm px-5 py-2 flex flex-row gap-x-2 items-center ">
               <Image
                 src={"/assets/images/googleplay.png"}
                 alt="Google Play"
