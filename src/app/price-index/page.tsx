@@ -70,7 +70,7 @@ export default function PriceIndexPage() {
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div className="grid grid-cols-4 text-xs sm:text-sm uppercase tracking-wide text-white/50 bg-white/5 border-b border-white/10">
+            <div className="hidden sm:grid grid-cols-4 text-xs sm:text-sm uppercase tracking-wide text-white/50 bg-white/5 border-b border-white/10">
               <div className="px-4 py-3">Product</div>
               <div className="px-4 py-3">Unit price</div>
               <div className="px-4 py-3">Delivery</div>
@@ -80,14 +80,24 @@ export default function PriceIndexPage() {
               {products.map((item) => (
                 <div
                   key={item.name}
-                  className="grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-0 px-4 py-4 text-sm sm:text-base"
+                  className="px-4 py-4 space-y-3 sm:space-y-0 sm:grid sm:grid-cols-4 sm:gap-0 text-sm sm:text-base"
                 >
                   <div className="font-semibold">{item.name}</div>
-                  <div className="text-white/80">{item.unitPrice}</div>
-                  <div className="text-white/80">{item.typicalDelivery}</div>
-                  <div className="text-white/80">{item.availability}</div>
+                  <div className="text-white/80 hidden sm:block">{item.unitPrice}</div>
+                  <div className="text-white/80 hidden sm:block">{item.typicalDelivery}</div>
+                  <div className="text-white/80 hidden sm:block">{item.availability}</div>
+
+                  <div className="grid grid-cols-2 gap-y-2 gap-x-3 text-xs text-white/70 sm:hidden">
+                    <span className="text-white/50">Unit price</span>
+                    <span className="text-white/85 text-sm">{item.unitPrice}</span>
+                    <span className="text-white/50">Delivery</span>
+                    <span className="text-white/85 text-sm">{item.typicalDelivery}</span>
+                    <span className="text-white/50">Availability</span>
+                    <span className="text-white/85 text-sm">{item.availability}</span>
+                  </div>
+
                   {item.note ? (
-                    <div className="sm:col-span-4 text-xs text-white/55 mt-2">
+                    <div className="sm:col-span-4 text-xs text-white/55 mt-1 sm:mt-2">
                       {item.note}
                     </div>
                   ) : null}

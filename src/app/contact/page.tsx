@@ -88,7 +88,7 @@ export default function ContactPage() {
             <span className="text-white">Contact</span>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-5 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start">
             <div className="md:col-span-3 space-y-6">
               <div className="text-primary text-sm font-medium">Contact</div>
               <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
@@ -233,7 +233,7 @@ export default function ContactPage() {
       </section>
 
       <section className="border-t border-white/10">
-        <div className="mx-auto max-w-[1100px] px-4 md:px-6 py-12 md:py-14 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto max-w-[1100px] px-4 md:px-6 py-12 md:py-14 grid grid-cols-1 md:grid-cols-3 gap-6">
           {infoBlocks.map((block) => (
             <div
               key={block.title}
