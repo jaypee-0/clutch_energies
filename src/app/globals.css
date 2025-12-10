@@ -115,3 +115,11 @@ body {
   height: 1px;
   width: 100%;
 }
+
+/* Hide scrollbar for snap carousels */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

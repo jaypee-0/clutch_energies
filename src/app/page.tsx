@@ -5,6 +5,65 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import NavBar from "@/components/NavBar";
 
+type Testimonial = { quote: string; name: string; location: string };
+
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      "I was stranded late at night with no fuel. Clutch showed up in 15 minutes — absolute lifesavers!",
+    name: "Femi A.",
+    location: "Lagos, Nigeria",
+  },
+  {
+    quote:
+      "One app for fuel, towing, and diagnostics? Genius. It’s like roadside assistance made smarter. The best part is I don’t have to keep multiple contacts anymore — everything is in the app.",
+    name: "Daniel E.",
+    location: "Port Harcourt",
+  },
+  {
+    quote:
+      "Their cooking gas delivery is so convenient. No more carrying heavy cylinders or waiting for the gas man.",
+    name: "Zainab M.",
+    location: "Abuja, Nigeria",
+  },
+  {
+    quote:
+      "As a fleet manager, I can’t imagine going back to managing fuel logistics manually. Clutch just works — invoices are clear, deliveries are on time, and my team saves hours every week.",
+    name: "Samuel I",
+    location: "Abuja, Nigeria",
+  },
+  {
+    quote:
+      "Our business relies on diesel to run generators. Clutch is fast, dependable, and always on time. Pricing is transparent and service is consistent even during peak hours.",
+    name: "Tolu I.",
+    location: "Lagos, Nigeria",
+  },
+  {
+    quote:
+      "Used to rely on two or three different apps, now I just use Clutch. It’s fast, simple, and made for people like me who want things to just work.",
+    name: "Tricia B.",
+    location: "Enugu, Nigeria",
+  },
+  {
+    quote:
+      "From booking to delivery, the experience is smooth. Notifications, real-time tracking, and friendly support — honestly a breath of fresh air.",
+    name: "Nonso K.",
+    location: "Abuja, Nigeria",
+  },
+  {
+    quote:
+      "Had an early morning emergency before work. Clutch got to me quickly, fueled me up, and I still made it in time for my meeting.",
+    name: "Bose O.",
+    location: "Ibadan, Nigeria",
+  },
+  {
+    quote:
+      "I recommend Clutch to anyone running a small business with vehicles. Scheduling deliveries for off-hours has been a game changer for us.",
+    name: "Ahmed S.",
+    location: "Kano, Nigeria",
+  },
+];
+
 export default function Home() {
   const services = [
     {
@@ -54,7 +113,7 @@ export default function Home() {
     <main className="font-dm-sans m-0 p-0 bg-black">
       {/* Hero Section */}
       <div
-        className="relative h-screen w-screen bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col items-center justify-center"
+        className="relative min-h-[90vh] lg:min-h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col items-center justify-center"
         style={{
           backgroundImage: "url('/assets/bg.png')",
         }}
@@ -90,14 +149,14 @@ export default function Home() {
               Download on Android
             </button>
           </div>
-          <div className=" flex flex-row justify-center gap-x-4 sm:gap-x-6 mt-8 sm:mt-10 items-center">
+          <div className="flex flex-row flex-wrap justify-center gap-3 sm:gap-x-6 mt-8 sm:mt-10 items-center">
             <Image
               src={"/assets/images/qr.png"}
               alt="QRCODE"
               width={80}
               height={80}
             ></Image>
-            <p className="text-xs sm:text-sm text-white">Scan QR to download</p>
+            <p className="text-xs sm:text-sm text-white text-center">Scan QR to download</p>
           </div>
         </div>
       </div>
@@ -189,8 +248,11 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="hidden md:block py-16 sm:py-20 h-[90vh] sm:h-screen overflow-y-hidden max-w-[1200px] mx-auto" >
-      <TestimonialsSection />
+      <section className="hidden md:block py-16 sm:py-20 h-[90vh] sm:h-screen overflow-y-hidden max-w-[1200px] mx-auto">
+        <TestimonialsSection testimonials={testimonials} />
+      </section>
+      <section className="md:hidden px-4 py-14">
+        <TestimonialsSectionMobile testimonials={testimonials} />
       </section>
 
        {/* CTA Banner */}
@@ -239,31 +301,31 @@ function ServicesTabs({ services }: { services: Service[] }) {
   return (
     <div className="mx-auto max-w-[1200px]">
       {/* Category chips */}
-      <div className="flex flex-wrap items-center gap-6 justify-center md:justify-between px-2 md:max-w-[90%] mx-auto mb-6">
+      <div className="flex flex-wrap items-center gap-4 sm:gap-6 justify-center md:justify-between px-2 md:max-w-[90%] mx-auto mb-6">
         {services.map((svc, idx) => (
           <button
             key={svc.title}
             onClick={() => setActiveIndex(idx)}
-            className={`rounded-xl cursor-pointer px-4 py-3 flex flex-col h-32 md:w-[140px] items-center gap-2 border transition-colors ${
+            className={`rounded-xl cursor-pointer px-4 py-3 flex flex-col h-28 sm:h-32 min-w-[120px] sm:min-w-[140px] w-full sm:w-auto items-center gap-2 border transition-colors ${
               activeIndex === idx
                 ? "border-none bg-white/5"
                 : "border-none bg-white/0 hover:bg-white/5"
             }`}
-        >
-          <Image
+          >
+            <Image
               src={svc.image}
-              className="w-auto h-20 object-contain"
+              className="w-auto h-16 sm:h-20 object-contain"
               alt={svc.title}
               width={500}
               height={500}
             />
-            <span className="text-xs text-white/80">{svc.title}</span>
+            <span className="text-xs text-white/80 text-center">{svc.title}</span>
           </button>
         ))}
       </div>
 
       {/* Feature card */}
-      <div className="mt-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-8">
+      <div className="mt-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-6 sm:p-8">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <div className="text-yellow-400 text-sm">{active.title}</div>
@@ -337,7 +399,7 @@ function Footer() {
             {/* Newsletter */}
             <div className="mt-4">
               <div className="text-white/70 text-sm mb-2">Subscribe to updates</div>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <input
                   type="email"
                   required
@@ -395,64 +457,7 @@ function Footer() {
   );
 }
 
-function TestimonialsSection() {
-  const testimonials: { quote: string; name: string; location: string }[] = [
-    {
-      quote:
-        "I was stranded late at night with no fuel. Clutch showed up in 15 minutes — absolute lifesavers!",
-      name: "Femi A.",
-      location: "Lagos, Nigeria",
-    },
-    {
-      quote:
-        "One app for fuel, towing, and diagnostics? Genius. It’s like roadside assistance made smarter. The best part is I don’t have to keep multiple contacts anymore — everything is in the app.",
-      name: "Daniel E.",
-      location: "Port Harcourt",
-    },
-    {
-      quote:
-        "Their cooking gas delivery is so convenient. No more carrying heavy cylinders or waiting for the gas man.",
-      name: "Zainab M.",
-      location: "Abuja, Nigeria",
-    },
-    {
-      quote:
-        "As a fleet manager, I can’t imagine going back to managing fuel logistics manually. Clutch just works — invoices are clear, deliveries are on time, and my team saves hours every week.",
-      name: "Samuel I",
-      location: "Abuja, Nigeria",
-    },
-    {
-      quote:
-        "Our business relies on diesel to run generators. Clutch is fast, dependable, and always on time. Pricing is transparent and service is consistent even during peak hours.",
-      name: "Tolu I.",
-      location: "Lagos, Nigeria",
-    },
-    {
-      quote:
-        "Used to rely on two or three different apps, now I just use Clutch. It’s fast, simple, and made for people like me who want things to just work.",
-      name: "Tricia B.",
-      location: "Enugu, Nigeria",
-    },
-    {
-      quote:
-        "From booking to delivery, the experience is smooth. Notifications, real-time tracking, and friendly support — honestly a breath of fresh air.",
-      name: "Nonso K.",
-      location: "Abuja, Nigeria",
-    },
-    {
-      quote:
-        "Had an early morning emergency before work. Clutch got to me quickly, fueled me up, and I still made it in time for my meeting.",
-      name: "Bose O.",
-      location: "Ibadan, Nigeria",
-    },
-    {
-      quote:
-        "I recommend Clutch to anyone running a small business with vehicles. Scheduling deliveries for off-hours has been a game changer for us.",
-      name: "Ahmed S.",
-      location: "Kano, Nigeria",
-    },
-  ];
-
+function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const column1 = testimonials.slice(0, 3);
@@ -558,6 +563,34 @@ function TestimonialsSection() {
             ))}
           </motion.div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSectionMobile({ testimonials }: { testimonials: Testimonial[] }) {
+  return (
+    <section className="space-y-8">
+      <div className="text-center space-y-3">
+        <div className="text-yellow-400 text-sm">Testimonials</div>
+        <h3 className="text-2xl font-semibold leading-tight">Trusted on the go</h3>
+        <p className="text-sm text-white/70">
+          Real stories from drivers, homes, and businesses who rely on Clutch.
+        </p>
+      </div>
+      <div className="flex gap-3 overflow-x-auto pb-2 hide-scrollbar snap-x snap-mandatory">
+        {testimonials.map((t) => (
+          <div
+            key={t.quote}
+            className="min-w-[240px] max-w-[260px] snap-start glass rounded-xl p-5 text-white/85 text-sm space-y-3"
+          >
+            <p className="leading-relaxed">{t.quote}</p>
+            <div className="text-white/70 text-xs">
+              <div className="font-medium">{t.name}</div>
+              <div>{t.location}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
