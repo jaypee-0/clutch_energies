@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 type NavBarProps = {
@@ -11,7 +12,7 @@ type NavBarProps = {
 export default function NavBar({ variant = "solid" }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isOverlay = variant === "overlay";
-
+  const router = useRouter();
   return (
     <header
       className={`inset-x-0 z-40 ${
@@ -19,7 +20,7 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
       }`}
     >
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-4 grid grid-cols-2 md:grid-cols-3 items-center">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 cursor-pointer" onClick={() => router.push("/")}>
           <Image src="/logo.png" alt="Clutch" width={32} height={32} />
           <span className="text-base font-semibold">Clutch</span>
         </div>
@@ -49,9 +50,6 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
           </Link>
           <Link className="hover:text-white transition-colors" href="/faq">
             FAQs
-          </Link>
-          <Link className="hover:text-white transition-colors" href="/privacy">
-            Privacy
           </Link>
         </nav>
 
@@ -121,9 +119,6 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
           </Link>
           <Link className="hover:text-white transition-colors" href="/faq" onClick={() => setMenuOpen(false)}>
             FAQs
-          </Link>
-          <Link className="hover:text-white transition-colors" href="/privacy" onClick={() => setMenuOpen(false)}>
-            Privacy
           </Link>
 
           <div className="pt-2">

@@ -386,7 +386,7 @@ function Footer() {
         <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
           <div>© {new Date().getFullYear()} Clutch Energies. All rights reserved.</div>
           <div className="flex items-center gap-4">
-            <a className="hover:text-white" href="#">Privacy</a>
+            <a className="hover:text-white" href="/privacy">Privacy</a>
             <a className="hover:text-white" href="#">Terms</a>
             <a className="hover:text-white" href="#">Cookies</a>
           </div>
