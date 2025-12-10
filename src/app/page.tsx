@@ -376,10 +376,10 @@ function Footer() {
 
           <div className="flex flex-col gap-3">
             <div className="text-white/60 text-sm">Services</div>
-            <a className="text-sm text-white/80 hover:text-white" href="#">Petrol delivery</a>
-            <a className="text-sm text-white/80 hover:text-white" href="#">Gas delivery</a>
-            <a className="text-sm text-white/80 hover:text-white" href="#">Diesel delivery</a>
-            <a className="text-sm text-white/80 hover:text-white" href="#">Roadside & towing</a>
+            <Link className="text-sm text-white/80 hover:text-white" href="/services/petrol">Petrol delivery</Link>
+            <Link className="text-sm text-white/80 hover:text-white" href="/services/gas">Gas delivery</Link>
+            <Link className="text-sm text-white/80 hover:text-white" href="/services/diesel">Diesel delivery</Link>
+            <Link className="text-sm text-white/80 hover:text-white" href="/services/roadside">Roadside & towing</Link>
           </div>
         </div>
 
@@ -387,8 +387,7 @@ function Footer() {
           <div>© {new Date().getFullYear()} Clutch Energies. All rights reserved.</div>
           <div className="flex items-center gap-4">
             <a className="hover:text-white" href="/privacy">Privacy</a>
-            <a className="hover:text-white" href="#">Terms</a>
-            <a className="hover:text-white" href="#">Cookies</a>
+            <a className="hover:text-white" href="/terms">Terms</a>
           </div>
         </div>
       </div>

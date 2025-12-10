@@ -11,8 +11,17 @@ type NavBarProps = {
 
 export default function NavBar({ variant = "solid" }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const isOverlay = variant === "overlay";
   const router = useRouter();
+
+  const services = [
+    { label: "Petrol delivery", href: "/services/petrol" },
+    { label: "Gas delivery", href: "/services/gas" },
+    { label: "Diesel delivery", href: "/services/diesel" },
+    { label: "Roadside & towing", href: "/services/roadside" },
+  ];
   return (
     <header
       className={`inset-x-0 z-40 ${
@@ -26,19 +35,47 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
         </div>
 
         <nav className="hidden md:flex justify-center items-center gap-6 lg:gap-8 text-sm text-white/80 whitespace-nowrap">
-          <Link className="hover:text-white transition-colors flex items-center gap-1" href="#">
-            <span>Services</span>
-            <svg viewBox="0 0 20 20" fill="currentColor" className="size-3 opacity-80">
-              <path
-                d="M5.5 7.5l4.5 5 4.5-5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className="hover:text-white transition-colors flex items-center gap-1"
+              onClick={() => setServicesOpen((v) => !v)}
+              aria-haspopup="true"
+              aria-expanded={servicesOpen}
+            >
+              <span>Services</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" className="size-3 opacity-80">
+                <path
+                  d="M5.5 7.5l4.5 5 4.5-5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              className={`absolute left-0 mt-3 w-56 rounded-xl border border-white/10 bg-black/90 shadow-lg transition-opacity ${
+                servicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+              }`}
+            >
+              <div className="flex flex-col divide-y divide-white/10">
+                {services.map((svc) => (
+                  <Link
+                    key={svc.href}
+                    href={svc.href}
+                    className="px-4 py-3 hover:bg-white/5 text-white/85 text-sm"
+                  >
+                    {svc.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <Link className="hover:text-white transition-colors" href="/price-index">
             Price index
           </Link>
@@ -105,9 +142,27 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
         </div>
 
         <nav className="flex flex-col p-4 gap-4 text-sm text-white/80">
-          <Link className="hover:text-white transition-colors" href="#" onClick={() => setMenuOpen(false)}>
+          <button
+            className="hover:text-white transition-colors text-left"
+            onClick={() => setMobileServicesOpen((v) => !v)}
+          >
             Services
-          </Link>
+            <span className="ml-1 text-white/50">{mobileServicesOpen ? "−" : "+"}</span>
+          </button>
+          {mobileServicesOpen ? (
+            <div className="ml-2 flex flex-col gap-2">
+              {services.map((svc) => (
+                <Link
+                  key={svc.href}
+                  className="hover:text-white transition-colors"
+                  href={svc.href}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {svc.label}
+                </Link>
+              ))}
+            </div>
+          ) : null}
           <Link className="hover:text-white transition-colors" href="/price-index" onClick={() => setMenuOpen(false)}>
             Price index
           </Link>

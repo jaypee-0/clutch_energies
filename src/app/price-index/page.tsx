@@ -122,10 +122,10 @@ export default function PriceIndexPage() {
                   Talk to sales
                 </a>
                 <a
-                  href="mailto:partnerships@clutchenergies.com"
+                  href="mailto:ops@clutchenergies.com"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm text-white/80 hover:text-white"
                 >
-                  partnerships@clutchenergies.com
+                  ops@clutchenergies.com
                 </a>
               </div>
             </div>

@@ -23,15 +23,15 @@ const contactChannels: ContactChannel[] = [
   {
     title: "Call or WhatsApp",
     description: "Speak with the team when you need fast assistance.",
-    href: "tel:+2347012345678",
-    action: "+234 701 234 5678",
+    href: "tel:+2349043918913",
+    action: "+234 904 391 8913",
     variant: "phone",
   },
   {
     title: "Partnerships & fleet",
     description: "Custom plans for businesses, estates, and fleets.",
-    href: "mailto:partnerships@clutchenergies.com",
-    action: "partnerships@clutchenergies.com",
+    href: "mailto:ops@clutchenergies.com",
+    action: "ops@clutchenergies.com",
     variant: "handshake",
   },
 ];
