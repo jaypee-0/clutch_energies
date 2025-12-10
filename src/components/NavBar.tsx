@@ -79,9 +79,9 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
           <Link className="hover:text-white transition-colors" href="/price-index">
             Price index
           </Link>
-          <Link className="hover:text-white transition-colors" href="#">
+          {/* <Link className="hover:text-white transition-colors" href="#">
             About Us
-          </Link>
+          </Link> */}
           <Link className="hover:text-white transition-colors" href="/contact">
             Contact Us
           </Link>
@@ -166,9 +166,9 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
           <Link className="hover:text-white transition-colors" href="/price-index" onClick={() => setMenuOpen(false)}>
             Price index
           </Link>
-          <Link className="hover:text-white transition-colors" href="#" onClick={() => setMenuOpen(false)}>
+          {/* <Link className="hover:text-white transition-colors" href="#" onClick={() => setMenuOpen(false)}>
             About Us
-          </Link>
+          </Link> */}
           <Link className="hover:text-white transition-colors" href="/contact" onClick={() => setMenuOpen(false)}>
             Contact Us
           </Link>
