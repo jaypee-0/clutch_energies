@@ -28,10 +28,10 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
         isOverlay ? "absolute top-0" : "sticky top-0 bg-black/80 backdrop-blur border-b border-white/10"
       }`}
     >
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-4 grid grid-cols-2 md:grid-cols-3 items-center">
-        <div className="flex items-center gap-1 cursor-pointer" onClick={() => router.push("/")}>
+      <div className="mx-auto max-w-[1200px] px-3 xs:px-4 sm:px-6 py-3 sm:py-4 grid grid-cols-[auto,1fr] md:grid-cols-3 items-center gap-2">
+        <div className="flex items-center gap-2 cursor-pointer min-w-0" onClick={() => router.push("/")}>
           <Image src="/logo.png" alt="Clutch" width={32} height={32} />
-          <span className="text-base font-semibold">Clutch</span>
+          <span className="text-sm sm:text-base font-semibold truncate">Clutch</span>
         </div>
 
         <nav className="hidden md:flex justify-center items-center gap-6 lg:gap-8 text-sm text-white/80 whitespace-nowrap">
@@ -91,7 +91,7 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
         </nav>
 
         <div className="flex justify-end items-center gap-2 sm:gap-3">
-          <button className="hidden md:inline-flex bg-primary hover:opacity-90 text-white rounded-full px-5 py-2 shadow-sm cursor-pointer">
+          <button className="hidden md:inline-flex bg-primary hover:opacity-90 text-white rounded-full px-4 lg:px-5 py-2 shadow-sm cursor-pointer text-sm">
             Download App
           </button>
           <button
@@ -119,7 +119,7 @@ export default function NavBar({ variant = "solid" }: NavBarProps) {
 
       {/* Mobile Drawer */}
       <aside
-        className={`fixed top-0 right-0 z-50 h-full w-72 bg-black/90 border-l border-white/10 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 z-50 h-full w-72 max-w-[80vw] sm:max-w-[320px] bg-black/90 border-l border-white/10 transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"
